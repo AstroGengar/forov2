@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %} {% load static %} {% block css %}
+<link href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'core/css/shingeki.css' %}"> {% endblock %} {% block contenido %}
+<title>Top1: Shingeki no Kyojin</title>
+</head>
+
+<body>
+    <div class="spacer"></div>
+
+    <div class="ui middle aligned stackable grid container">
+        <div class="row">
+            <a href="{% url 'home' %}" id="volver" class="btn btn-outline-dark">Volver</a>
+            <div class="eight wide column">
+                <h3 class="ui huge header">Sinopsis</h3>
+                <p>“El titan siguió buscando la libertad en todas las épocas. Luchó por la libertad. El nombre es: Attack on Titan. La verdad fuera de los muros finalmente fue revelada, y también la identidad de los titanes.</p>
+                <h3 class="ui huge header"></h3>
+                <p>Hasta este punto, la humanidad estaba haciendo demasiados sacrificios. Sin embargo, debe seguir avanzando. ‘No he visto el mar fuera de la muralla, un símbolo de libertad que debo ver con mis propios ojos’.
+                </p>
+            </div>
+            <div class="six wide right floated column">
+                </br>
+                <img src="{% static 'core/img/top/snk1.jpg'%}" class="ui medium centered fluid image" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="six wide column">
+                <img src="{% static 'core/img/top/snk2.jpg'%}" class="ui medium centered fluid image" />
+            </div>
+            <div class="eight wide right floated column">
+                <h3 class="ui huge header"></h3>
+                <p>El tiempo sigue su marcha y han pasado 6 años desde el primer ataque de los titanes. El Cuerpo de Exploración sale a expediciones fuera del Muro María. ‘Hay un mar después del muro, y detrás del mar hay libertad. Siempre lo creí. El mar,
+                    a donde llegó la humanidad por primera vez… ¿Hay libertad más allá del horizonte?</p>
+                <h3 class="ui huge header"></h3>
+                <p>La historia de Eren Jaeger entra a una nueva fase...”.</p>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="spacer"></div>
+
+</body>
+{% endblock %}

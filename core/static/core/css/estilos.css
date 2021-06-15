@@ -1,0 +1,359 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 20px;
+    background-color: #000000;
+}
+
+
+/* El "*" significa que le aplicaremos estas propiedades
+a todos los elementos, esto para que tengan cero márgenes, 
+y cero padding, haciendo así que se vean igual en todos los navegadores.
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 1700px;
+    margin: auto;
+}
+
+.row::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.row-nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.aling-item-center {
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* header */
+
+.header h1 {
+    font-family: Arial;
+    color: black;
+}
+
+.header {
+    padding: 12px 15px;
+    background: #f12711;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #f5af19, #f12711);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+header.logo a {
+    font-size: 30px;
+    text-transform: capitalize;
+    color: #ffffff;
+}
+
+.header .open-nav {
+    height: 34px;
+    width: 44px;
+    background-color: #ffffff;
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .open-nav span {
+    display: inline-block;
+    width: 20px;
+    background-color: #f47d00;
+    height: 2px;
+    position: relative;
+}
+
+.header .open-nav span::before,
+.header .open-nav span::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 2px;
+    width: 50%;
+    background-color: inherit;
+    transition: all 0.3s ease;
+}
+
+.header .open-nav span::before {
+    transform: translateY(-6px);
+}
+
+.header .open-nav span::after {
+    transform: translateY(6px);
+}
+
+.header .open-nav:hover span::before,
+.header .abrir-nav:hover span::after {
+    width: 100%;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 60px;
+    color: #d4ebf7;
+    margin: 1.5 0px;
+}
+
+h2 {
+    color: #000000;
+    margin: 1.5 0px;
+}
+
+h5 {
+    font-family: Negrita;
+    color: #fff49e;
+}
+
+.columna-izquierda {
+    float: left;
+    width: 75%;
+}
+
+.columna-derecha {
+    width: 25%;
+    float: right;
+    padding-left: 20px;
+}
+
+.card {
+    padding: 20px;
+    background: #FF512F;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F09819, #FF512F);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F09819, #FF512F);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin-top: 20px;
+}
+
+.card img {
+    width: 100%;
+}
+
+
+/*Transparencia al nav y dimensiones*/
+
+
+/*El overflow-y es para que se mueva el nav y no la pagina de fondo*/
+
+.header .nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+}
+
+.header .nav.open {
+    transform: translateX(0%);
+}
+
+
+/*Posicion, color y tamaño del botton cerrar del nav*/
+
+.header .nav .close-nav {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background-color: #4f67e9;
+    height: 40px;
+    width: 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ffffff;
+    transition: all 0.3 ease;
+    transform: translateY(-55px);
+    opacity: 0;
+}
+
+.header .nav.open .close-nav {
+    transform: translateY(0px);
+    opacity: 1;
+    transition-delay: 0.5;
+}
+
+
+/*Color y posicionamiento a nuestro nav*/
+
+.header .nav-inner {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+}
+
+.header .nav ul {
+    transform: translateX(-80px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.header .nav.open ul {
+    transform: translateX(0px);
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
+
+/*Posicionamiento a nuestra ul del nav (espacio entre ellos, centrar)*/
+
+.header .nav ul li {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+/*Caracteristicas a nuestra ul de nav (tamaño letra, color)*/
+
+.header .nav ul li a {
+    display: inline-block;
+    font-size: 35px;
+    color: #ffffff;
+    text-transform: capitalize;
+    position: relative;
+}
+
+
+/*Caracteristicas y dimensiones del menu nav (se refiere a la linea
+que esta bajo el texto)*/
+
+.header .nav ul li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    background-color: #ffffff;
+    width: 0%;
+    transition: all 0.3s ease;
+}
+
+
+/*Efecto para todas aquellas lineas (al pasar el mouse aparecera la linea
+en el tiempo indicado en .header .nav ul li a::before)*/
+
+.header .nav ul li a:hover::before {
+    width: 100%;
+}
+
+
+/*Margen a las imagenes de la columna derecha*/
+
+.columna-derecha .card img {
+    margin-bottom: 10px;
+}
+
+
+/*Area del footer*/
+
+footer {
+    position: relative;
+    top: 18px;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    color: #d9d9d9;
+}
+
+.footer-content {
+    display: flex;
+}
+
+.footer-content h2 {
+    display: flex;
+    color: white;
+}
+
+.footer-content .box {
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+
+.box h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.box .content {
+    margin: 20px 0 0 0;
+}
+
+.left .content {
+    text-align: justify;
+}
+
+.left .content .social {
+    margin: 20px 0 0 0;
+}
+
+.left .content .social a {
+    padding: 10.8px;
+}
+
+.left .content .social a span {
+    height: 40px;
+    width: 40px;
+    background-color: #1a1a1a;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.left .content .social a span:hover {
+    background: #f12020;
+}
+
+
+/* responsive*/
+
+@media(max-width: 800px) {
+    .columna-izquierda,
+    .columna-derecha {
+        width: 100%;
+        padding: 0px;
+    }
+}

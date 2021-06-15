@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %} {% load static %} {% block css %}
+<link href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'core/css/maou.css' %}"> {% endblock %} {% block contenido %}
+<title>Top 4: Maou Gakuin no Futekigousha</title>
+</head>
+
+<body>
+    <div class="spacer"></div>
+
+    <div class="ui middle aligned stackable grid container">
+        <div class="row">
+            <a href="{% url 'home' %}" id="volver" class="btn btn-outline-dark">Volver</a>
+            <div class="eight wide column">
+                <h3 class="ui huge header">Sinopsis</h3>
+                <p>En un pasado lejano, una guerra entre humanos y demonios provocó un caos generalizado y un derramamiento de sangre. Para poner fin a este conflicto aparentemente interminable, el Rey Demonio Anos Voldigoad voluntariamente sacrificó su
+                    vida, con la esperanza de renacer en un futuro pacífico.</p>
+                <h3 class="ui huge header"></h3>
+                <p>En preparación para el regreso de su rey, la raza demoníaca creó la Academia del Rey Demonio, una institución de élite encargada de determinar la identidad de Anos cuando se despierte. Se reencarna dos milenios después, pero para su sorpresa,
+                    pronto descubre que el nivel de magia en el mundo ha disminuido drásticamente durante su ausencia.
+                </p>
+            </div>
+            <div class="six wide right floated column">
+                </br>
+                <img src="{% static 'core/img/top/maou1.jpg'%}" class="ui medium centered fluid image" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="six wide column">
+                <img src="{% static 'core/img/top/maou2.jpg'%}" class="ui medium centered fluid image" />
+            </div>
+            <div class="eight wide right floated column">
+                <h3 class="ui huge header"></h3>
+                <p>Además, cuando se inscribe en la academia para reclamar su título legítimo, descubre que los demonios lo recuerdan de manera diferente. Su personalidad, sus hechos e incluso su legado están falsificados, enmascarados bajo el nombre de
+                    un impostor. Esta “falta” de conocimiento común lo convierte en el atípico de la academia, un inadaptado nunca antes visto en la historia.</p>
+                <h3 class="ui huge header"></h3>
+                <p>A pesar de estos inconvenientes, Anos no se inmuta. Mientras se propone descubrir a aquellos que alteran su glorioso pasado, se encarga de hacer que sus descendientes reconozcan que su gobernante finalmente ha regresado.</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="spacer"></div>
+
+</body>
+
+{% endblock %}

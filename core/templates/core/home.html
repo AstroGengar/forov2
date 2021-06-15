@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS-->
+    {% load static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
+
+    <title>Anime Blog</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'core/img/logo-manga.png' %}" alt="LOGO_FORO" style="width: 180px;">
+                    </a>
+                </div>
+                <div class="col-md-9 text-center" style="margin-top: auto; margin-bottom: auto;">
+                    <h1>Maneki-Neko</h1>
+                </div>
+                <button type="button" class="open-nav">
+                <span></span>
+                </button>
+                <!-- Menu de navegador -->
+                <nav class="nav text-center">
+                    <button type="button" class="close-nav">&times;</button>
+                    <div class="nav-inner" style="width: 100%;">
+                        <ul>
+                            <li><a href="{% url 'home' %}">Inicio</a></li>
+                            <li><a href="{% url 'anime' %}">Anime</a></li>
+                            <li><a href="{% url 'manga' %}">Manga</a></li>
+                            <li><a href="{% url 'list_anime' %}" target="_blank">Buscar Anime (API)</a></li>
+                            {% if user.is_authenticated %}
+                            <li><a href="{% url 'nuevo_anime' %}">Nuevos Anime</a></li>
+                            <li><a href="{% url 'listado_anime' %}">Listado Anime</a></li>
+                            <li>
+                                <a href="#">Usuario: {{ user.username }}</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'logout'%}">Cerrar sesión</a>
+                            </li>
+                            {% else %}
+                            <li>
+                                <a href="{% url 'login' %}">Iniciar Sesion</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'registro_usuario' %}">Registrar</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <br>
+    <div class="row">
+        <div class="columna-izquierda">
+            <div class="card">
+                <h2>El autor de Kanojo, Okarishimasu celebró el final de Shingeki no Kyojin.</h2>
+                <h5>Shingeki no Kyojin</h5>
+                <img src="{% static 'core/img/img1.jpg' %}" alt="blog">
+                <p>Anime, Abril 12, 2021</p>
+                <p>A través de su cuenta oficial de Twitter, el autor del manga de Kanojo, Okarishimasu (Rent A Girlfriend), Reiji Miyajima, publicó una ilustración especial para conmemorar el final del manga de Hajime Isayama, Shingeki no Kyojin (Attack
+                    on Titan). La ilustración está protagonizada por Chizuru Mizuhara y se le muestra utilizando el uniforme del Cuerpo de Exploración.</p>
+                <p>Reiji Miyajima comenzó la publicación del manga a través de la revista Weekly Shonen Magazine de la editorial Kodansha en julio de 2017. La editorial publicó el décimo noveno volumen recopilatorio el pasado 17 de febrero, y publicará el
+                    vigésimo el próximo 16 de abril en Japón.</p>
+            </div>
+            <br>
+            <div class="card">
+                <h2>El manga Fire Force supera 15 millones de copias en circulación.</h2>
+                <h5>Fire Force</h5>
+                <img src="{% static 'core/img/img2.jpg' %}" alt="blog">
+                <p>Manga, Abril 10, 2021</p>
+                <p>En la cuenta oficial de Twitter del manga escrito e ilustrado por Atsushi Ohkubo, Enen no Shouboutai (Fire Force), se publicó la portada del vigésimo octavo volumen recopilatorio de la obra. El cintillo de este volumen confirmó que la
+                    franquicia literaria ha superado las 15 millones de copias en circulación acumuladas.</p>
+                <p>Por otra parte, Ohkubo publica el manga en la revista Weekly Shonen Magazine de la editorial Kodansha desde septiembre de 2015. La editorial publicó el vigésimo séptimo volumen recopilatorio el pasado 17 de febrero, y publicará el vigésimo
+                    octavo el próximo 16 de abril en Japón
+                </p>
+                <p>La obra inspiró una adaptación al anime de veinticuatro episodios producida por los estudios David Production, estrenada en julio de 2019. Una segunda temporada también de veinticuatro episodios se emitió durante la temporada de Verano-2020,
+                    específicamente desde el 3 de julio en Japón.</p>
+
+            </div>
+            <br>
+            <div class="card">
+                <h2>Netflix estrenará Eden’s Zero fuera de Japón el próximo otoño.</h2>
+                <h5>Eden’s Zero</h5>
+                <img src="{% static 'core/img/img3.jpeg' %}" alt="blog">
+                <p>Anime, Abril 7, 2021</p>
+                <p>La cuenta oficial en Twitter del anime de Eden’s Zero anunció el sábado que Netflix estrenará la serie fuera de Japón en el próximo otoño. De momento no hay una fecha en concreta para ella. Los usuarios japoneses de esta y otras plataformas
+                    de vídeo bajo demanda ya pueden disfrutar de ella tras su estreno del primer episodio en la televisión japonesa este pasado 10 de abril.</p>
+                <p>Shinji Ishihira (Fairy Tail) es el director jefe de la producción, mientras que Yūshi Suzuki (director de episodios de la tercera temporada de Fairy Tail) dirige el anime. Mitsutaka Hirota (Kanojo, Okarishimasu) supervisará y escribirá
+                    los guiones de la serie, y Yurika Sako (animadora de Food Wars! The Third Plate) está cargo de los diseños de los personajes. La composición musical corre a cargo de Yoshihisa Hirano para NTV Music.</p>
+            </div>
+        </div>
+        <div class="columna-derecha">
+            <div class="card">
+                <a href="{% url 'sobrenosotros' %}" target="_blank">
+                    <h2>Sobre nosotros</h2>
+                    <img src="{% static 'core/img/sobrenosotros.png'%}" alt="SOBRE-NOSOTROS" />
+                </a>
+                <p>Somos un grupo de personas dedicadas a traerles las ultimas noticias y novedades acerca de animes y mangas!.
+                </p>
+            </div>
+            <br>
+            <div class="card">
+                <h3>Animes más vistos</h3>
+                <a href="{% url 'shingeki' %}">
+                    <h5>Top 1: Shingeki No Kyojin: The Final Season</h5>
+                    <img src="{% static 'core/img/top1.jpg' %}" alt="TOP1">
+                </a>
+                <a href="{% url 'naruto' %}">
+                    <h5>Top 2: Naruto Shippuden</h5>
+                    <img src="{% static 'core/img/top2.jpg' %}" alt="TOP2">
+                </a>
+                <a href="{% url 'onepiece' %}">
+                    <h5>Top 3: One Piece</h5>
+                    <img src="{% static 'core/img/top3.jpg' %}" alt="TOP3">
+                </a>
+                <a href="{% url 'maou' %}">
+                    <h5>Top 4: Maou Gakuin no Futekigousha</h5>
+                    <img src="{% static 'core/img/top4.jpg' %}" alt="TOP4">
+                </a>
+                <a href="{% url 'blackclover' %}">
+                    <h5>Top 5: Black Clover</h5>
+                    <img src="{% static 'core/img/top5.jpg' %}" alt="TOP5">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="left box">
+                <h2>Expandamos nuestra comunidad!</h2>
+                <div class="content">
+                    <p>¡Siguenos en nuestras redes sociales!</p>
+                    <div class="social">
+                        <a href="#"><span class="fab fa-facebook-f"></span></a>
+                        <a href="#"><span class="fab fa-twitter"></span></a>
+                        <a href="#"><span class="fab fa-instagram"></span></a>
+                        <a href="#"><span class="fab fa-youtube"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="center box">
+                <h2>Dirección</h2>
+                <div class="content">
+                    <div class="place">
+                        <span class="fas fa-map-marker-alt"></span>
+                        <span class="text">Providencia, Region Metropolitana</span>
+                    </div>
+                    <div class="phone">
+                        <span class="fas fa-phone-alt"></span>
+                        <span class="text">+569 52 34 06 15</span>
+                    </div>
+                    <div class="email">
+                        <span class="fas fa-envelope"></span>
+                        <span class="text">manekineko@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'core/js/script.js' %}"></script>
+</body>
+
+</html>

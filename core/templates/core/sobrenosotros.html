@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS-->
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'core/css/sobrenosotros.css'%}">
+
+    <title>Sobre Nosotros</title>
+</head>
+
+<body>
+    <section class="team">
+        <div class="container">
+            <div class="row">
+                <div class="team-item">
+                    <div class="img-box">
+                        <img src="{% static 'core/img/sobrenosotros/icono.png'%}" alt="team img">
+                        <div class="social-links">
+                            <a href="#">Instagram</a>
+                            <a href="#">Twitter</a>
+                            <a href="#">Facebook</a>
+                        </div>
+                    </div>
+                    <h3>robert bustos</h3>
+                    <p>Creador de contenido</p>
+                </div>
+                <div class="team-item">
+                    <div class="img-box">
+                        <img src="{% static 'core/img/sobrenosotros/iconoisra.jpg'%}" alt="team img">
+                        <div class="social-links">
+                            <a href="#">Instagram</a>
+                            <a href="#">Twitter</a>
+                            <a href="#">Facebook</a>
+                        </div>
+                    </div>
+                    <h3>israel bórquez</h3>
+                    <p>Creador de contenido</p>
+                </div>
+                <div class="team-item">
+                    <div class="img-box">
+                        <img src="{% static 'core/img/sobrenosotros/icons_nico.jpg'%}" alt="team img">
+                        <div class="social-links">
+                            <a href="#">Instagram</a>
+                            <a href="#">Twitter</a>
+                            <a href="#">Facebook</a>
+                        </div>
+                    </div>
+                    <h3>nicolás salgado</h3>
+                    <p>Creador de contenido</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="left box">
+                <h2>Expandamos nuestra comunidad!</h2>
+                <div class="content">
+                    <p>¡Siguenos en nuestras redes sociales!</p>
+                    <div class="social">
+                        <a href="#"><span class="fab fa-facebook-f"></span></a>
+                        <a href="#"><span class="fab fa-twitter"></span></a>
+                        <a href="#"><span class="fab fa-instagram"></span></a>
+                        <a href="#"><span class="fab fa-youtube"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="center box">
+                <h2>Dirección</h2>
+                <div class="content">
+                    <div class="place">
+                        <span class="fas fa-map-marker-alt"></span>
+                        <span class="text">Providencia, Region Metropolitana</span>
+                    </div>
+                    <div class="phone">
+                        <span class="fas fa-phone-alt"></span>
+                        <span class="text">+569 52 34 06 15</span>
+                    </div>
+                    <div class="email">
+                        <span class="fas fa-envelope"></span>
+                        <span class="text">manekineko@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
