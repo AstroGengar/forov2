@@ -1,5 +1,10 @@
-from django.urls import path
-from .views import home, manga, anime, sobrenosotros, blackclover, maou, naruto, onepiece, shingeki, list_anime, listado_anime, nuevo_anime, modificar_anime, eliminar_anime, registro_usuario
+from django.urls import path, include
+from .views import home, manga, anime, sobrenosotros, blackclover, maou, naruto, onepiece, shingeki, list_anime, listado_anime, nuevo_anime, modificar_anime, eliminar_anime, registro_usuario, AnimeViewSet
+
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register('anime', AnimeViewSet)
 
 urlpatterns = [
     path('', home, name="home"),
@@ -17,4 +22,5 @@ urlpatterns = [
     path('modificar-anime/<id>/', modificar_anime, name="modificar_anime"),
     path('eliminar-anime/<id>/', eliminar_anime, name="eliminar_anime"),
     path('registro/', registro_usuario, name="registro_usuario"),
+    path('api/', include(router.urls)),
 ]

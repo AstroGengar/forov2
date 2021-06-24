@@ -4,6 +4,11 @@ from .forms import AnimeForms, CustomUserForm
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth import login, authenticate
 
+# rest_framework
+
+from rest_framework import viewsets
+from .serializers import AnimeSerializer
+
 # Create your views here.
 
 def home(request):
@@ -101,3 +106,13 @@ def registro_usuario(request):
             return redirect(to='home')
 
     return render(request, 'registration/registrarse.html', data)
+
+
+# viewsets
+
+class AnimeViewSet(viewsets.ModelViewSet):
+    queryset = Anime.objects.all()
+    serializer_class = AnimeSerializer
+
+
+
