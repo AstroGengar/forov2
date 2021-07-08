@@ -1,9 +1,11 @@
 from django.urls import path, include
 from .views import home, manga, anime, sobrenosotros, blackclover, maou, naruto, onepiece, shingeki, list_anime, listado_anime, nuevo_anime, modificar_anime, eliminar_anime, registro_usuario, AnimeViewSet
 
+#Permitimos crear las URLs necesarias para nuestra API
 from rest_framework import routers
 
 router = routers.DefaultRouter()
+#Todas estas rutas que genera "routers" se registran en el path
 router.register('anime', AnimeViewSet)
 
 urlpatterns = [
@@ -22,5 +24,6 @@ urlpatterns = [
     path('modificar-anime/<id>/', modificar_anime, name="modificar_anime"),
     path('eliminar-anime/<id>/', eliminar_anime, name="eliminar_anime"),
     path('registro/', registro_usuario, name="registro_usuario"),
+    #El routers nos generará todas las urls como el CRUD y son pasadas a django con el prefijo API
     path('api/', include(router.urls)),
 ]

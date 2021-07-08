@@ -33,6 +33,11 @@ LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
 
+SOCIAL_AUTH_FACEBOOK_KEY = "1442533926100929"
+
+SOCIAL_AUTH_FACEBOOK_SECRET = "850376d0bfa36698ea4769b61fc82ce2"
+
+
 
 # Application definition
 
@@ -46,6 +51,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'crispy_forms',
     'rest_framework',
+    'social_django',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -58,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'proyforo.urls'
@@ -73,6 +80,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -141,3 +150,9 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #Ruta en donde quedaran guardadas las imagenes
+
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
